@@ -12,9 +12,7 @@ Import `gift_cards_api.sql` script stored in `database` directory
 
 1 - Copy `.env.example` to `.env`
 
-    ```bash
-    cp .env.example .env
-    ```
+    cp .env.example .env    
 
 2- Edit `.env` file in function of your environment
 
@@ -29,15 +27,11 @@ Import `gift_cards_api.sql` script stored in `database` directory
 
 1- Install dependencies
 
-    ```bash
     composer install
-    ```
 
 2- Run
 
-    ```bash
     php -S localhost:8000 -t public
-    ```
 
 ## Test
 
