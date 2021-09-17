@@ -1,0 +1,151 @@
+{
+    "info": {
+        "_postman_id": "3dc3a967-f8dd-458d-8640-ffe15fd3ff91",
+        "name": "gift-cards-api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "all cards",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/api/cards",
+                    "host": [
+                        "{{server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cards"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "all cards types",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/api/cards_types",
+                    "host": [
+                        "{{server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cards_types"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "payment calculation",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"cart_total\" : 500,\n    \"gift_card_ids\": [1,2]\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{server}}/api/payment_calculation",
+                    "host": [
+                        "{{server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "payment_calculation"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "store card",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Card B\",\n    \"value\": 100,\n    \"type_id\": 2\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{server}}/api/cards",
+                    "host": [
+                        "{{server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cards"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "store card type",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\" : \"Type 3\",\n    \"max_avail_value\" : 30\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{server}}/cards_types",
+                    "host": [
+                        "{{server}}"
+                    ],
+                    "path": [
+                        "cards_types"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "server",
+            "value": "http://localhost:8000"
+        }
+    ]
+}
