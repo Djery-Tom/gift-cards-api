@@ -25,6 +25,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     //Cards Types routes
     $router->get('cards_types', 'CardTypeController@getAll');
     $router->post('cards_types', 'CardTypeController@store');
+    $router->put('cards_types/{id}', 'CardTypeController@update');
 
     //Payment route
     $router->post('payment_calculation', 'PaymentController@calculation');

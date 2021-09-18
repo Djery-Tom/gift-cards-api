@@ -26,7 +26,7 @@ class CardController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|cards',
             'value' => 'required|integer',
             'type_id' => 'required|exists:cards_types,id'
         ]);

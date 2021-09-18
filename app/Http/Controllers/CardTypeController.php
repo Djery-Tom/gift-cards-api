@@ -26,12 +26,26 @@ class CardTypeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|unique:cards_types',
             'max_avail_value' => 'required|integer|min:0|max:100',
         ]);
 
         $type = new CardType($request->all());
         $type->save();
         return response(['message' => 'Card type saved']);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $type = CardType::findOrFail($id);
+
+        $this->validate($request, [
+            'name' => 'required|unique:cards_types,id,' . $id,
+            'max_avail_value' => 'required|integer|min:0|max:100',
+        ]);
+
+        $type->fill($request->all());
+        $type->save();
+        return response(['message' => 'Card type updated']);
     }
 }

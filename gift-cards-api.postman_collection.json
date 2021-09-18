@@ -110,12 +110,41 @@
                     }
                 },
                 "url": {
-                    "raw": "{{server}}/cards_types",
+                    "raw": "{{server}}/api/cards_types",
                     "host": [
                         "{{server}}"
                     ],
                     "path": [
+                        "api",
                         "cards_types"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "edit card type",
+            "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\" : \"Type 3\",\n    \"max_avail_value\" : 40\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{server}}/api/cards_types/1",
+                    "host": [
+                        "{{server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cards_types",
+                        "1"
                     ]
                 }
             },
