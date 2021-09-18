@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CardType;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class CardTypeController extends Controller
 {
@@ -37,7 +38,9 @@ class CardTypeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $type = CardType::findOrFail($id);
+        $type = CardType::find($id);
+        if (!isset($type))
+            return response(['message' => 'Card type not found'], ResponseAlias::HTTP_NOT_FOUND);
 
         $this->validate($request, [
             'name' => 'required|unique:cards_types,id,' . $id,

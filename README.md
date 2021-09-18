@@ -4,9 +4,9 @@ This project is an simple Lumen application to simulate gift card payment calcul
 
 ## Requirements
 
-### Import DB
+[comment]: <> (### Import DB)
 
-Import `gift_cards_api.sql` script stored in `database` directory
+[comment]: <> (Import `gift_cards_api.sql` script stored in `database` directory)
 
 ### Configuration
 
@@ -29,7 +29,11 @@ Import `gift_cards_api.sql` script stored in `database` directory
 
     composer install
 
-2- Run
+2- Run migration and seed
+
+    php artisan migrate:fresh --seed
+
+3- Run
 
     php -S localhost:8000 -t public
 
